@@ -1,0 +1,131 @@
+text,intent
+Hi,greeting
+Hello,greeting
+Hey there,greeting
+Good morning,greeting
+Good evening,greeting
+Hi how are you,greeting
+Hello chatbot,greeting
+Hey,greeting
+Nice to meet you,greeting
+Howdy,greeting
+
+Bye,goodbye
+Goodbye,goodbye
+See you later,goodbye
+Talk to you later,goodbye
+I am leaving now,goodbye
+Catch you later,goodbye
+Have a nice day,goodbye
+See you soon,goodbye
+Bye bye,goodbye
+Take care,goodbye
+
+Thank you,thanks
+Thanks a lot,thanks
+Thank you so much,thanks
+Much appreciated,thanks
+Thanks for your help,thanks
+I really appreciate it,thanks
+Thanks buddy,thanks
+Many thanks,thanks
+Thank you very much,thanks
+Thanks for helping,thanks
+
+Tell me a joke,jokes
+Make me laugh,jokes
+Say something funny,jokes
+Tell me something humorous,jokes
+I want to hear a joke,jokes
+Crack a joke,jokes
+Do you know any jokes,jokes
+Make me smile,jokes
+Entertain me,jokes
+Say a funny line,jokes
+
+What is machine learning,query
+Explain artificial intelligence,query
+What is data science,query
+Tell me about Python,query
+What is NLP,query
+Who is the prime minister of India,query
+Explain deep learning,query
+What is cloud computing,query
+What is blockchain,query
+Tell me about Java,query
+
+What is the weather today,weather
+Is it raining outside,weather
+Tell me today’s temperature,weather
+Will it be sunny tomorrow,weather
+How is the climate today,weather
+Is it cold outside,weather
+What’s the weather like,weather
+Is it hot today,weather
+Weather forecast please,weather
+Tell me the weather update,weather
+
+I am bored,boredom
+I have nothing to do,boredom
+Entertain me please,boredom
+Suggest me something fun,boredom
+I am feeling bored,boredom
+I am bored at home,boredom
+What should I do now,boredom
+I need some fun,boredom
+I am tired and bored,boredom
+Make me less bored,boredom
+
+Someone is following me,danger
+I am scared and alone,danger
+There is a man outside my house,danger
+I feel unsafe walking home,danger
+Help me someone is chasing me,danger
+I think I am in danger right now,danger
+Someone is threatening me,danger
+There is someone behind me,danger
+I am not safe here,danger
+Help I am in trouble,danger
+I am panicking,danger
+Someone is trying to hurt me,danger
+I am being attacked,danger
+I fear for my life,danger
+I am not safe please help,danger
+
+My boss keeps messaging me,harassment
+A colleague touched me without permission,harassment
+People are sending me abusive texts,harassment
+Someone is verbally abusing me,harassment
+I am being harassed at work,harassment
+They keep making inappropriate comments,harassment
+Someone keeps disturbing me,harassment
+I am uncomfortable with their messages,harassment
+They are misbehaving with me,harassment
+I feel harassed and unsafe,harassment
+
+He shows up wherever I go,stalking
+Someone is tracking my location,stalking
+I think someone hacked my phone,stalking
+My ex keeps following me,stalking
+I am being watched constantly,stalking
+Someone knows where I am all the time,stalking
+I feel someone is monitoring me,stalking
+They keep checking my movements,stalking
+I am being followed everywhere,stalking
+Someone won’t leave me alone,stalking
+
+I feel like hurting myself,self_harm
+I don't want to live anymore,self_harm
+I feel very depressed and lonely,self_harm
+I hate my life,self_harm
+I want everything to end,self_harm
+I feel hopeless and broken,self_harm
+I am tired of living,self_harm
+I want to disappear,self_harm
+I feel empty inside,self_harm
+Life feels meaningless,self_harm
+
+
+
+
+
