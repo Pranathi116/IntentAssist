@@ -2,20 +2,19 @@ import streamlit as st
 import joblib
 import re
 
-# Load trained model and vectorizer
 model = joblib.load("intent_model.pkl")
 vectorizer = joblib.load("vectorizer.pkl")
 
 st.set_page_config(page_title="Intent Assist", layout="centered")
 
-# ---------------- NORMALIZATION ----------------
+
 def normalize_text(text):
     text = text.lower().strip()
-    # Reduce repeated characters: hellooo -> hello
+   
     text = re.sub(r'(.)\1{2,}', r'\1\1', text)
     return text
 
-# ---------------- CUSTOM CSS ----------------
+
 st.markdown(
     """
     <style>
@@ -42,22 +41,21 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ---------------- TITLE ----------------
+
 st.markdown('<div class="title">INTENT ASSIST</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Hybrid AI Intent Detection Chatbot</div>', unsafe_allow_html=True)
 
-# ---------------- INPUT ----------------
 user_input = st.text_input("Enter your message", placeholder="Type something here...")
 analyze = st.button("Analyze")
 
-# ---------------- MAIN LOGIC ----------------
+
 if analyze:
     if user_input.strip() == "":
         st.warning("Please enter a message.")
     else:
         text_lower = normalize_text(user_input)
 
-        # Rule word lists
+       
         greeting_words = ["hi", "hello", "hey", "good morning", "good evening", "hola", "hii", "heyy"]
 
         self_harm_words = [
@@ -68,24 +66,24 @@ if analyze:
 
         danger_words = ["follow", "chase", "attack", "unsafe", "scared", "threat", "hurt", "behind"]
 
-        # -------- HYBRID DECISION LAYER --------
+       
 
-        # 1. Greeting override
+     
         if any(word in text_lower for word in greeting_words):
             intent = "greeting"
             confidence = 1.0
 
-        # 2. Self-harm override (CRITICAL)
+       
         elif any(word in text_lower for word in self_harm_words):
             intent = "self_harm"
             confidence = 1.0
 
-        # 3. Danger override
+       
         elif any(word in text_lower for word in danger_words):
             intent = "danger"
             confidence = 1.0
 
-        # 4. ML fallback
+      
         else:
             vec = vectorizer.transform([user_input])
             probs = model.predict_proba(vec)[0]
@@ -93,11 +91,10 @@ if analyze:
             intent = model.classes_[intent_index]
             confidence = probs[intent_index]
 
-        # Low confidence fallback (do NOT downgrade safety intents)
+      
         if confidence < 0.4 and intent not in ["danger", "self_harm"]:
             intent = "general_chat"
 
-        # ---------------- DISPLAY RESULT ----------------
         st.markdown("### 🔍 Detected Intent")
 
         if intent in ["danger", "harassment", "stalking", "self_harm"]:
@@ -105,7 +102,7 @@ if analyze:
         else:
             st.success(f"{intent.upper()}  (Confidence: {confidence*100:.2f}%)")
 
-        # ---------------- SUGGESTIONS ----------------
+
         st.markdown("### 💡 Suggestions")
 
         if intent in ["danger", "harassment", "stalking", "self_harm"]:
